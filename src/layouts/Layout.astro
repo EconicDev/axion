@@ -1,0 +1,30 @@
+---
+import "../styles/globals.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  generator?: string;
+}
+
+const { 
+  title = "Axion - Energía Limpia",
+  description = "Especialistas en instalación de paneles solares para el hogar en República Dominicana",
+  generator = "v0.dev"
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/placeholder-logo.svg" />
+    <meta name="generator" content={generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
